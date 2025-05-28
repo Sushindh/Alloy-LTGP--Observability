@@ -14,9 +14,8 @@ services:
   alloy:
     image: grafana/alloy:latest
     ports:
-      - "54317:4317"
       - "54318:4318"
-      - "9091:9091"  # Prometheus scrapes this
+      - "9091:9091"  
     volumes:
       - ./config.alloy:/etc/alloy/config.alloy
     command: ["run", "/etc/alloy/config.alloy"]
@@ -39,7 +38,6 @@ services:
     volumes:
       - ./tempo.yaml:/etc/tempo.yaml
     ports:
-      - "4318:4318"
       - "4317:4317"
       - "3200:3200"
 
@@ -49,3 +47,5 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
+      - tempo
+      - loki
