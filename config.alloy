@@ -4,7 +4,6 @@ logging {
 
 otelcol.receiver.otlp "default" {
   grpc  {}
-  http  {}
 
   output {
     metrics = [otelcol.processor.batch.default.input]
@@ -12,7 +11,6 @@ otelcol.receiver.otlp "default" {
     traces  = [otelcol.processor.batch.default.input]
   }
 }
-
 
 otelcol.processor.batch "default" {
   output {
@@ -33,7 +31,21 @@ prometheus.remote_write "default" {
 }
 
 otelcol.exporter.loki "default" {
+  forward_to = [loki.process.default.receiver]
+}
+
+loki.process "default" {
   forward_to = [loki.write.default.receiver]
+
+  stage.labels {
+    values = {
+      service_name = "resource.service.name",
+      deployment_environment = "resource.deployment.environment",
+      endpoint = "attributes.endpoint",
+      trace_id = "attributes.trace_id",
+      span_id = "attributes.span_id",
+    }
+  }
 }
 
 loki.write "default" {
