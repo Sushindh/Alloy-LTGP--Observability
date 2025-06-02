@@ -14,8 +14,7 @@ services:
   alloy:
     image: grafana/alloy:latest
     ports:
-      - "54318:4318"
-      - "9091:9091"  
+      - "54317:4317"
     volumes:
       - ./config.alloy:/etc/alloy/config.alloy
     command: ["run", "/etc/alloy/config.alloy"]
@@ -23,7 +22,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     ports:
-      - "9090:9090"
+      - "9091:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -34,9 +33,9 @@ services:
 
   tempo:
     image: grafana/tempo:latest
-    command: ["-config.file=/etc/tempo.yaml"]
     volumes:
-      - ./tempo.yaml:/etc/tempo.yaml
+      - ./tempo.yaml:/etc/tempo/tempo.yaml
+    command: [ "-config.file=/etc/tempo/tempo.yaml" ]
     ports:
       - "4317:4317"
       - "3200:3200"
