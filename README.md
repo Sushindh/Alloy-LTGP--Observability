@@ -63,6 +63,7 @@ graph TD
     C --> F[Grafana]
     D --> F
     E --> F
+```
 
 🚀 Getting Started
 📦 Prerequisites
