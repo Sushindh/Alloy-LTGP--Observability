@@ -101,7 +101,7 @@ Explore Observability Tools
 | Loki      | http://localhost:3100      | Logs API             |
 | Tempo     | http://localhost:3200      | Traces API           |
 
-📌 Grafana Login: admin / admin
+📌 Grafana Login: admin, password:  admin
 
 📂 Project Structure
 ```bash
@@ -115,6 +115,7 @@ flask-observability-app/
 └── requirements.txt        # Python dependencies
 ```
 🔧 Technologies Used
+
 🐍 Flask
 
 📦 OpenTelemetry (metrics, logs, traces)
