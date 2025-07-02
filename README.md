@@ -152,7 +152,6 @@ app_compute_request_count{endpoint="/payment"}
 ---
 
 📜 License
-This project is licensed under the MIT License.
 Feel free to fork, modify, and use for your own learning or observability setups.
 
 ---
