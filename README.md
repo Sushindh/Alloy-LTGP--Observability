@@ -60,7 +60,10 @@ graph TD
     B -->|Metrics| C[Prometheus]
     B -->|Logs| D[Loki]
     B -->|Traces| E[Tempo]
-    C & D & E --> F[Grafana]
+    C --> F[Grafana]
+    D --> F
+    E --> F
+
 🚀 Getting Started
 📦 Prerequisites
 Docker + Docker Compose
