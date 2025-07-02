@@ -94,13 +94,13 @@ http://localhost:5000/cart
 http://localhost:5000/payment
 ```
 Explore Observability Tools
-
+```bash
 Tool	URL	Use Case
 Grafana	http://localhost:3000	Dashboards
 Prometheus	http://localhost:9091	View collected metrics
 Loki	http://localhost:3100	Logs API
 Tempo	http://localhost:3200	Traces API
-
+```
 📌 Grafana Login: admin / admin
 
 📂 Project Structure
@@ -147,13 +147,13 @@ app_compute_request_count{endpoint="/home"}
 app_compute_request_count{endpoint="/cart"}
 
 app_compute_request_count{endpoint="/payment"}
-
+---
 📜 License
 This project is licensed under the MIT License.
 Feel free to fork, modify, and use for your own learning or observability setups.
-
+---
 <div align="center">
 ⭐ Star this repo if you found it helpful
 📬 Made by Sushindh A
 
-</div> ```
+</div> 
