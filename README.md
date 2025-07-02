@@ -76,25 +76,23 @@ Git
 🧑‍💻 Run the App
 Clone the repository
 
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/your-username/flask-observability-app.git
 cd flask-observability-app
+```
 Build and Start the stack
-
-bash
-Copy
-Edit
+```bash
 docker-compose up --build
-Access endpoints
+```
 
+Access endpoints
+```bash
 http://localhost:5000/home
 
 http://localhost:5000/cart
 
 http://localhost:5000/payment
-
+```
 Explore Observability Tools
 
 Tool	URL	Use Case
@@ -106,9 +104,7 @@ Tempo	http://localhost:3200	Traces API
 📌 Grafana Login: admin / admin
 
 📂 Project Structure
-bash
-Copy
-Edit
+```bash
 flask-observability-app/
 ├── app.py                  # Flask app with OpenTelemetry
 ├── Dockerfile              # Build Flask image
@@ -117,6 +113,7 @@ flask-observability-app/
 ├── prometheus.yml          # Prometheus config
 ├── tempo.yaml              # Tempo config
 └── requirements.txt        # Python dependencies
+```
 🔧 Technologies Used
 🐍 Flask
 
@@ -138,8 +135,6 @@ flask-observability-app/
 Prometheus Counter:
 
 python
-Copy
-Edit
 compute_request_count = meter.create_counter(
     name="app_compute_request_count",
     description="Counts the requests",
